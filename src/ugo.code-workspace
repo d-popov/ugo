@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.classpath": true,
+			"**/.project": true,
+			"**/.settings": true,
+			"**/.factorypath": true
+		}
+	},
+	"launch": {
+		"configurations": [
+			{
+				"type": "java",
+				"name": "CodeLens (Launch) - Main",
+				"request": "launch",
+				"mainClass": "Main"
+			},
+			{
+				"type": "java",
+				"name": "Debug (Launch) - Current File",
+				"request": "launch",
+				"mainClass": "${file}"
+			}
+		]
+	}
+}
