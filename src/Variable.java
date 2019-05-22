@@ -8,10 +8,9 @@ public class Variable implements Formula {
 	@Override public String asString () { return name ; }
 	@Override public double asValue () { return value ; }
 	public void set ( double value ) { this . value = value ; }
-	@Override
-	public <R> R accept(FormulaVisitor<R> v) {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public <R> R accept(FormulaVisitor<R> v) {	
+		return v.visit(this);
 	}
 }
 

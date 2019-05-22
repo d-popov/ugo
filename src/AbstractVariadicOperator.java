@@ -1,19 +1,22 @@
 
 public abstract class AbstractVariadicOperator implements Formula {
-	private Formula[] operands;
+	protected Formula[] operands;
 	
 	public AbstractVariadicOperator(Formula... operands) {
 		this.operands = operands ;
 	}
-	@Override public String asString () {
+	@Override public String asString () {		
+		//this.accept(this);
 		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append("(");
 		for (int index = 0; index < operands.length ; index ++){
-		if (index > 0) stringBuilder.append(symbol());
-		stringBuilder.append(operands[index].asString());
+			if (index > 0) {
+				stringBuilder.append(this.symbol());
+			}
+			//stringBuilder.append(operands[index].accept());
+			stringBuilder.append(operands[index].asString());
 		}
-		stringBuilder.append(")");
 		return stringBuilder.toString();
+		 
 		}
 	@Override public double asValue () {
 		double accumulator = initialValue ();
